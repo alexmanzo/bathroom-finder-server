@@ -59,14 +59,13 @@ router.get('/geography', (req, res) => {
         distanceField: 'distance',
         // Specifies indexed field to look in order to calculate distance
         key: 'loc',
-        // Limit to 50 results
-        num: 50,
         // Equivalent to 50 miles
         maxDistance: 80467.2,
         // Necessary since our model uses a 2dsphere
         spherical: true,
       },
     },
+    { $limit: 50 }
   ])
     .then(locations => {
       res.json(locations)

@@ -135,7 +135,7 @@ describe('Location API', function() {
       let resLocation
       return chai
         .request(app)
-        .get('/api/locations/geography?lat=35.99.7326&lng=78.903628')
+        .get('/api/locations/geography?lat=35.996094&lng=-78.903231')
         .then(function(res) {
           expect(res).to.have.status(200)
           expect(res).to.be.json
